@@ -6,19 +6,19 @@ public class Cycle {
 
         System.out.println(); // разделитель между выводами
 
-        int i = 6;
-        while (i >= -6) {
-            System.out.print(i + " ");
-            i = i - 2;
+        int counter = 6;
+        while (counter >= -6) {
+            System.out.print(counter + " ");
+            counter -= 2;
         }
 
         System.out.println(); // разделитель между выводами
 
-        i = 10;
+        counter = 10;
         do {
-            i++;
-            System.out.print(i++ + " ");
-        } while (i < 20);
+            counter++;
+            System.out.print(counter++ + " ");
+        } while (counter < 20);
 
          System.out.println(); // разделитель между выводами
     }
