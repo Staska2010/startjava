@@ -17,10 +17,11 @@ public class Cycle {
         counter = 10;
         int sum = 0;
         do {
+            if (counter % 2 != 0) {
+                    sum += counter;
+            }
             counter++;
-            sum = sum + counter;
-            counter++;
-        } while (counter < 20);
+        } while (counter <= 20);
          System.out.println("Сумма нечетных чисел от 10 до 20: " + sum);
     }
 }

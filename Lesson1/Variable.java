@@ -4,7 +4,7 @@ public class Variable {
         short seriesId = 2940;
         int productGroup = 958;
         long productKey = 2615000000L;
-        float frequency= 1.83f;
+        float frequency = 1.83f;
         double ramValue = 3.89d;
         char processorSeries = 'N';
         boolean isWindows = true;
@@ -15,6 +15,5 @@ public class Variable {
         System.out.println("Frequency: " + frequency);
         System.out.println("RAM: " + ramValue);
         System.out.println("OS Windows? " + isWindows);
-
-    };
+    }
 }
