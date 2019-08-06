@@ -4,7 +4,7 @@ public class Cycle {
             System.out.print(i + " ");
         }
 
-        System.out.println(); // разделитель между выводами
+        System.out.println(); // разделитель между выводами.
 
         int counter = 6;
         while (counter >= -6) {
@@ -12,7 +12,7 @@ public class Cycle {
             counter -= 2;
         }
 
-        System.out.println(); // разделитель между выводами
+        System.out.println(); // разделитель между выводами.
 
         counter = 10;
         int sum = 0;
