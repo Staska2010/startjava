@@ -23,7 +23,11 @@ public class Calculator {
         } else if (operator == '/') {
             System.out.println (firstNum + " / " + secondNum + " = " + (firstNum / secondNum));
         } else if (operator == '^') {
-            System.out.println (firstNum + " ^ " + secondNum + " = " + Math.pow(firstNum, secondNum));
+            int powResult = firstNum;
+            for (int i = 1; i < secondNum; i++) {
+                powResult = powResult * firstNum;
+            }
+            System.out.println (firstNum + " ^ " + secondNum + " = " + powResult);
         } else if (operator == '%') {
             System.out.println (firstNum + " % " + secondNum + " = " + (firstNum % secondNum));
         }
