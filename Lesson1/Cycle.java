@@ -18,7 +18,11 @@ public class Cycle {
         int sum = 0;
         do {
             if (counter % 2 != 0) {
+<<<<<<< HEAD
                 sum += counter;
+=======
+                    sum += counter;
+>>>>>>> 15f4e9f355707219354ec584d21d59227c1632d7
             }
             counter++;
         } while (counter <= 20);
