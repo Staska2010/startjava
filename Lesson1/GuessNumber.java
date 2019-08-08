@@ -1,26 +1,26 @@
 public class GuessNumber {
 	public static void main(String[] args) {
-		// computer - значение, которое загадал компьютер
-		int computer = 74;
+		// значение, которое загадал компьютер
+		int computerNumber = 18;
 		//Переменные для двоичного поиска
 		// left - левая и правые границы интервала [0; 100]
 		// qurrent - текущее ("вводимое" пользователем) значение
 		int left = 0;
 		int right = 100;
-		int qurrent = 0;
+		int current = 0;
 
 		// Сам двоичный поиск
 		while (left <= right) {
-			qurrent = (left + right) / 2;
-			System.out.println ("Your choice:" + qurrent);
-			if (qurrent == computer) {
+			current = (left + right) / 2;
+			System.out.println ("Your choice:" + current);
+			if (current == computerNumber) {
 				System.out.println ("You won!");
 				break;
-			} else if (qurrent > computer) {
-				right = qurrent;
-				System.out.println("You number is greater!");
+			} else if (current > computerNumber) {
+				right = current;
+				System.out.println("Ваше число больше!");
 			} else {
-				left = qurrent;
+				left = current;
 				System.out.println("Your number is less!");
 			}
 		}
