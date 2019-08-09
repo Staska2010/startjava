@@ -6,23 +6,23 @@ public class Person {
 	String name = "John Smith";
 	String hairColor = "dark";
 
-	public void walk(int meters) {
-
+	void walk(int meters) {
+		System.out.println("You've passed " + meters + "meters.");
 	}
 
-	public void sit() {
-
+	void sit() {
+		System.out.println("You are sitting.");
 	} 
 
-	public void run(int meters) {
-
+	void run(int meters) {
+		System.out.println("You've ran " + meters + "meters.");
 	}
 
-	public void say(String somethingToSay) {
+	void say(String somethingToSay) {
 		
 	}
 
-	public void learnJava(int howManyHours) {
+	void learnJava(int howManyHours) {
 
 	}
 }
