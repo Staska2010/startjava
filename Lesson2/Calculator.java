@@ -1,4 +1,3 @@
-
 public class Calculator {
     public static void run(int firstNum, char operator, int secondNum) {   
         switch (operator) {

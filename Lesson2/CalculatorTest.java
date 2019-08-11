@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-
 		String confirmation;
-
+		Scanner sc = new Scanner(System.in);
 		do {
-			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter the first number: ");
 			int firstNumber = sc.nextInt();
 			System.out.println("Enter the operator: ");
@@ -18,8 +16,8 @@ public class CalculatorTest {
 			do {
 				System.out.println("Do you want to continue? (yes/no): ");
 				confirmation = sc.next();
-			} while (!(confirmation.equals("yes")||confirmation.equals("no")));
+			} while (!(confirmation.equals("yes") || confirmation.equals("no")));
 
-		} while(confirmation=="");
+		} while(confirmation.equals("yes"));
 	}
 }

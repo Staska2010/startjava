@@ -1,5 +1,5 @@
 public class JaegerTest {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Jaeger alpha = new Jaeger();
 		alpha.setMark("Mark-1");
 		alpha.setOrigin("Russia");
