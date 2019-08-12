@@ -7,6 +7,15 @@ public class Jaeger {
 	private int armor;
 	private String energyCore;
 
+	public Jaeger(String mark, String origin, float height, int speed, int strenght, int armor, String energyCore) {
+		this.mark = mark;
+		this.origin = origin;
+		this.height = height;
+		this.speed = speed;
+		this.strenght = strenght;
+		this.armor = armor;
+		this.energyCore = energyCore;
+	}
 	
 	public void setMark(String mark) {
 		this.mark = mark;
