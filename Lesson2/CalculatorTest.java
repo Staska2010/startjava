@@ -11,13 +11,12 @@ public class CalculatorTest {
 			char operator = sc.next().charAt(0);
 			System.out.println("Enter the second number: ");
 			int secondNumber = sc.nextInt();
-			Calculator.run(firstNumber, operator, secondNumber);
+			Calculator.calculate(firstNumber, operator, secondNumber);
 	
 			do {
 				System.out.println("Do you want to continue? (yes/no): ");
 				confirmation = sc.next();
-			} while (!(confirmation.equals("yes") || confirmation.equals("no")));
-
+			} while (!confirmation.equals("yes") && !confirmation.equals("no"));
 		} while(confirmation.equals("yes"));
 	}
 }

@@ -1,5 +1,5 @@
 public class Calculator {
-    public static void run(int firstNum, char operator, int secondNum) {   
+    public static void calculate(int firstNum, char operator, int secondNum) {   
         switch (operator) {
             case '+' : 
                 System.out.println (firstNum + " + " + secondNum + " = " + (firstNum + secondNum));
