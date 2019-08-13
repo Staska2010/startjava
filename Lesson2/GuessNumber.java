@@ -2,14 +2,16 @@ import java.util.Scanner;
 
 public class GuessNumber {
 	private int computerNumber;
+	private Player firstPlayer, secondPlayer;
 	
-	public GuessNumber() {
-		computerNumber = 0;
+	public GuessNumber(Player firstPlayer, Player secondPlayer) {
+		this.firstPlayer = firstPlayer;
+		this.secondPlayer = secondPlayer;
 	}
 
 	public void setGuessedNumber() {
-		computerNumber = (int)(Math.random()*100+1);
-		System.out.println("Computer made a number...");
+		computerNumber = (int)(Math.random() * 100 + 1);
+		System.out.println("Computer made a number [0; 100]...");
 	}
 
 	public int getGuessedNumber() {
@@ -53,5 +55,26 @@ public class GuessNumber {
 				isWinner = true;
 		}
 		return isWinner;
+	}
+
+	public void play() {
+		String confirmation;
+		Scanner sc = new Scanner(System.in);
+		do {
+			setGuessedNumber();
+			System.out.println("Tsss... computer made " + getGuessedNumber());
+			while (true) {
+				if (gameNextMove(firstPlayer)) {
+					break;
+				}
+				if (gameNextMove(secondPlayer)) {
+					break;
+				}
+			}
+			do {
+				System.out.println("Do you want to repeat? (yes/no): ");
+				confirmation = sc.next();
+			} while (!confirmation.equals("yes") && !confirmation.equals("no"));	
+		} while(confirmation.equals("yes")); 
 	}
 }
