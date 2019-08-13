@@ -31,14 +31,13 @@ public class GuessNumber {
 		inputNumber(player);
 		if (player.getNumber() > computerNumber) {
 			System.out.println("You number is greater than computer number");
-			return false;
 		} else if (player.getNumber() < computerNumber) {	
 			System.out.println("You number is less than computer number");
-			return false;
 		} else {
 			System.out.println("You guessed!");
 			return true;
 		}
+		return false;
 	}
 
 	private void inputNumber(Player player) {
