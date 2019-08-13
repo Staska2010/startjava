@@ -3,28 +3,31 @@ import java.util.Scanner;
 public class GuessNumber {
 	private int computerNumber;
 	private Player firstPlayer, secondPlayer;
+	private Scanner sc = new Scanner(System.in);
 	
 	public GuessNumber(Player firstPlayer, Player secondPlayer) {
 		this.firstPlayer = firstPlayer;
 		this.secondPlayer = secondPlayer;
 	}
 
-	public void setGuessedNumber() {
+	public void play() {
+		generateGuessedNumber();
+		while (true) {
+			if (compareNumbers(firstPlayer)) {
+				break;
+			}
+			if (compareNumbers(secondPlayer)) {
+				break;
+			}
+		}	
+	}
+
+	private void generateGuessedNumber() {
 		computerNumber = (int)(Math.random() * 100 + 1);
 		System.out.println("Computer made a number [0; 100]...");
 	}
 
-	public int getGuessedNumber() {
-		return computerNumber;
-	}
-
-	private int getNumberFromPlayer() {
-		Scanner sc = new Scanner(System.in);
-		int number = sc.nextInt();
-		return number;
-	}
-
-	private boolean gameNextMove(Player player) {
+	private boolean compareNumbers(Player player) {
 		boolean isWinner = false;
 		System.out.println(player.getName() + " it's your turn: ");
 		int inputValue = getNumberFromPlayer();
@@ -41,17 +44,9 @@ public class GuessNumber {
 		return isWinner;
 	}
 
-	public void play() {
+	private int getNumberFromPlayer() {
 		Scanner sc = new Scanner(System.in);
-		setGuessedNumber();
-		System.out.println("Tsss... computer made " + getGuessedNumber());
-		while (true) {
-			if (gameNextMove(firstPlayer)) {
-				break;
-			}
-			if (gameNextMove(secondPlayer)) {
-				break;
-			}
-		}	
+		int number = sc.nextInt();
+		return number;
 	}
 }
