@@ -15,8 +15,7 @@ public class GuessNumber {
 		while (true) {
 			if (compareNumbers(firstPlayer)) {
 				break;
-			}
-			if (compareNumbers(secondPlayer)) {
+			} else if (compareNumbers(secondPlayer)) {
 				break;
 			}
 		}	
@@ -28,25 +27,23 @@ public class GuessNumber {
 	}
 
 	private boolean compareNumbers(Player player) {
-		boolean isWinner = false;
 		System.out.println(player.getName() + " it's your turn: ");
-		int inputValue = getNumberFromPlayer();
-		player.setNumber(inputValue);
+		inputNumber(player);
 		if (player.getNumber() > computerNumber) {
 			System.out.println("You number is greater than computer number");
-		}
-		else if (player.getNumber() < computerNumber) {	
+			return false;
+		} else if (player.getNumber() < computerNumber) {	
 			System.out.println("You number is less than computer number");
+			return false;
 		} else {
 			System.out.println("You guessed!");
-			isWinner = true;
+			return true;
 		}
-		return isWinner;
 	}
 
-	private int getNumberFromPlayer() {
-		Scanner sc = new Scanner(System.in);
+	private void inputNumber(Player player) {
 		int number = sc.nextInt();
-		return number;
+		System.out.println("Player " + player.getName() + " enters number " + number);
+		player.setNumber(number);
 	}
 }
