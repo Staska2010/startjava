@@ -7,7 +7,15 @@ public class GuessNumberTest {
 		Player playerOne = new Player(sc.nextLine());
 		System.out.println("Player two, enter your name: ");
 		Player playerTwo = new Player(sc.nextLine());
-		GuessNumber game = new GuessNumber(playerOne, playerTwo);
-		game.play();
+		GuessNumber game = new GuessNumber(playerOne, playerTwo);	
+		
+		String confirmation;
+		do {
+			game.play();
+			do {
+				System.out.println("Do you want to repeat? (yes/no): ");
+				confirmation = sc.next();
+			} while (!confirmation.equals("yes") && !confirmation.equals("no"));
+		} while(confirmation.equals("yes")); 	
 	}	
 }

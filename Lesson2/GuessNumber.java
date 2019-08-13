@@ -18,63 +18,40 @@ public class GuessNumber {
 		return computerNumber;
 	}
 
-	public int getNumberFromPlayer() {
+	private int getNumberFromPlayer() {
 		Scanner sc = new Scanner(System.in);
 		int number = sc.nextInt();
 		return number;
 	}
 
-	public String checkPlayerNumber(Player player) {
-		String result;
-		if (player.getNumber() > computerNumber) {
-			result = "greater";
-		}
-		else if (player.getNumber() < computerNumber) {
-			result = "less";	
-		} else {
-			result = "win";
-		}
-		return result;
-	}
-
-	public boolean gameNextMove(Player nextPlayer) {
+	private boolean gameNextMove(Player player) {
 		boolean isWinner = false;
-		System.out.println(nextPlayer.getName() + " it's your turn: ");
+		System.out.println(player.getName() + " it's your turn: ");
 		int inputValue = getNumberFromPlayer();
-		nextPlayer.setNumber(inputValue);
-		String result = checkPlayerNumber(nextPlayer);
-		switch (result) {
-			case "greater" : 
-				System.out.println("You number is greater than computer number");
-				break;
-			case "less" : 
-				System.out.println("You number is less than computer number");
-				break;
-			case "win" : 
-				System.out.println("You guessed!");
-				isWinner = true;
+		player.setNumber(inputValue);
+		if (player.getNumber() > computerNumber) {
+			System.out.println("You number is greater than computer number");
+		}
+		else if (player.getNumber() < computerNumber) {	
+			System.out.println("You number is less than computer number");
+		} else {
+			System.out.println("You guessed!");
+			isWinner = true;
 		}
 		return isWinner;
 	}
 
 	public void play() {
-		String confirmation;
 		Scanner sc = new Scanner(System.in);
-		do {
-			setGuessedNumber();
-			System.out.println("Tsss... computer made " + getGuessedNumber());
-			while (true) {
-				if (gameNextMove(firstPlayer)) {
-					break;
-				}
-				if (gameNextMove(secondPlayer)) {
-					break;
-				}
+		setGuessedNumber();
+		System.out.println("Tsss... computer made " + getGuessedNumber());
+		while (true) {
+			if (gameNextMove(firstPlayer)) {
+				break;
 			}
-			do {
-				System.out.println("Do you want to repeat? (yes/no): ");
-				confirmation = sc.next();
-			} while (!confirmation.equals("yes") && !confirmation.equals("no"));	
-		} while(confirmation.equals("yes")); 
+			if (gameNextMove(secondPlayer)) {
+				break;
+			}
+		}	
 	}
 }
