@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.jaeger;
+
 public class JaegerTest {
 	public static void main(String[] args) {
 		Jaeger alpha = new Jaeger("Mark-1", "Russia", 85.34f, 3, 10, 10, "Stun Core 08");
