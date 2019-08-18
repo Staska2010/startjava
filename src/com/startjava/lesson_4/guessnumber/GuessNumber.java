@@ -15,18 +15,18 @@ class GuessNumber {
 	void play() {
 		firstPlayer.clearStatistics();
 		secondPlayer.clearStatistics();
-		generateGuessedNumber();
+		generateGuessNumber();
 		while (firstPlayer.getNumberOfAttempts() < 10 && secondPlayer.getNumberOfAttempts() < 10) {
 		    if (compareNumbers(firstPlayer)) {
 		        break;
 		    } else if (compareNumbers(secondPlayer)) {
-                    break;
+		    	break;
 		    }
 		}
 		endOfGame();
 	}
 
-	private void generateGuessedNumber() {
+	private void generateGuessNumber() {
 		computerNumber = (int)(Math.random() * 100 + 1);
 		System.out.println("Computer made a number [0; 100]...");
 	}
@@ -36,8 +36,8 @@ class GuessNumber {
 			System.out.println("\nThis is your last chance!");
 		}
 		System.out.println(player.getName() + " it's your turn: ");
-        inputNumber(player);
-        if (player.getNumber() > computerNumber) {
+		inputNumber(player);
+		if (player.getNumber() > computerNumber) {
         	System.out.println("You number is greater than computer number");
         } else if (player.getNumber() < computerNumber) {
         	System.out.println("You number is less than computer number");
