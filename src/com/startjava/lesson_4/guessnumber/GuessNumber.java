@@ -38,7 +38,7 @@ class GuessNumber {
 		System.out.println(player.getName() + " it's your turn: ");
 		inputNumber(player);
 		if (player.getNumber() > computerNumber) {
-        	System.out.println("You number is greater than computer number");
+			System.out.println("You number is greater than computer number");
 		} else if (player.getNumber() < computerNumber) {
 		    System.out.println("You number is less than computer number");
 		} else {
