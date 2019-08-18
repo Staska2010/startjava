@@ -41,14 +41,4 @@ public class Player {
 	public int[] getArrayOfNumbers() {
 		return Arrays.copyOf(inputtedNumbers, attempts);
 	}
-
-	public int findDecision(int computerNumber) {
-		int decision = -1;
-		for(int i = 0; i < inputtedNumbers.length; i++) {
-			if (inputtedNumbers[i] == computerNumber) {
-				decision = i + 1;
-			}
-		}
-		return decision;
-	}
 }

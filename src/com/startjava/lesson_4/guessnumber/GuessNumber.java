@@ -16,7 +16,7 @@ class GuessNumber {
 		firstPlayer.clearStatistics();
 		secondPlayer.clearStatistics();
 		generateGuessNumber();
-		while (firstPlayer.getNumberOfAttempts() < 10 && secondPlayer.getNumberOfAttempts() < 10) {
+		for (int nextAttempt = 0; nextAttempt < 10; nextAttempt++) {
 		    if (compareNumbers(firstPlayer)) {
 		        break;
 		    } else if (compareNumbers(secondPlayer)) {
@@ -52,7 +52,7 @@ class GuessNumber {
 		int number = sc.nextInt();
 		System.out.println("Player " + player.getName() + " enters number " + number);
 		player.setNumber(number);
-        System.out.println("Numbers of attempts: " + player.getNumberOfAttempts());
+		System.out.println("Numbers of attempts: " + player.getNumberOfAttempts());
 	}
 
 	private void endOfGame() {
@@ -64,14 +64,14 @@ class GuessNumber {
 
 	private void printArrayOfPlayer(Player player) {
 		System.out.println(player.getName() + " your numbers: ");
-		for(int i: player.getArrayOfNumbers()) {
-			System.out.print(i + " ");
+		for(int attempt: player.getArrayOfNumbers()) {
+			System.out.print(attempt + " ");
 		}
 		System.out.println("\n");
 	}
 
 	private void decisionsSummary(Player player) {
-		int decision = player.findDecision(computerNumber);
+		int decision = (player.getNumber() == computerNumber) ? player.getNumberOfAttempts() : -1;
 		if (decision > 0) {
 			System.out.println(player.getName() + " guessed right on the " + decision + " try.");
 		} else if (decision < 0 && player.getArrayOfNumbers().length == 10) {
