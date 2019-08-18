@@ -39,13 +39,13 @@ class GuessNumber {
 		inputNumber(player);
 		if (player.getNumber() > computerNumber) {
         	System.out.println("You number is greater than computer number");
-        } else if (player.getNumber() < computerNumber) {
-        	System.out.println("You number is less than computer number");
-        } else {
-        	System.out.println("You guessed!");
-        	return true;
-        }
-        return false;
+		} else if (player.getNumber() < computerNumber) {
+		    System.out.println("You number is less than computer number");
+		} else {
+		    System.out.println("You guessed!");
+		    return true;
+		}
+		return false;
 	}
 
 	private void inputNumber(Player player) {

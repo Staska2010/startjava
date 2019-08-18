@@ -26,7 +26,7 @@ public class Player {
 	}
 
 	public int getNumber() {
-		return inputtedNumbers[attempts-1];
+		return inputtedNumbers[attempts - 1];
 	}
 
 	public void clearStatistics() {
